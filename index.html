@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Egyptian Image Hover Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: transparent; /* Ensure the background is transparent */
+        }
+
+        .image-container {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 2s ease;
+        }
+
+        /* This class will be added when the image is hovered */
+        .image-container.enlarged img {
+            transform: scale(5);
+        }
+    </style>
+    <script>
+        // JavaScript to add the class on hover, and keep the image enlarged
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageContainer = document.querySelector('.image-container');
+            imageContainer.addEventListener('mouseenter', function() {
+                imageContainer.classList.add('enlarged');
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="arch.png" alt="Ancient Egyptian Temple">
+    </div>
+
+</body>
+</html>
